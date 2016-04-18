@@ -17,7 +17,7 @@ class GerenciadorConexao{
   private $servidor = '127.0.0.1';
   private $dbAtual = 'ufma_compSociedade';
   private $user = 'root';
-  private $password = '123456';
+  private $password = '';
 
   public function __construct(){
     if (self::$pdo == null) {

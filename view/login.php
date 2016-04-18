@@ -36,18 +36,20 @@ include_once $header;
         </div>
         <div class="panel-body">
           <!-- <form id="formLogin" role="form" action="<?php //echo $objSessaoSistema; ?>" method="post"> -->
-          <form id="formLogin" role="form" action="" method="post">
+          <form id="formLogin" role="form" action="<?php echo $controlLogin;?>" method="post">
             <fieldset>
               <div class="form-group">
-                <input class="form-control" placeholder="Digite o seu E-mail" name="email" type="email" autofocus>
+                <label class="control-label" for="inputEmailUser">Email</label>
+                <input class="form-control" placeholder="Digite o seu E-mail" id="inputEmailUser" name="inputEmailUser" type="email" autofocus>
               </div>
               <div class="form-group">
-                <input class="form-control" placeholder="Digite a sua Senha" name="password" type="password" value="">
+                <label class="control-label" for="inputPasswordUser">Senha</label>
+                <input class="form-control" placeholder="Digite a sua Senha" id="inputPasswordUser" name="inputPasswordUser" type="password" value="">
               </div>
               <div class="form-group text-right">
                 <!-- Change this to a button or input when using this as a form -->
-                <button type="submit" class="btn btn-success">Login</button>
                 <a href="registerUser.php" class="btn btn-warning">1ª Acesso</a>
+                <button type="submit" class="btn btn-success">Login</button>
               </div>
             </fieldset>
           </form>

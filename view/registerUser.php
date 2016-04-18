@@ -4,7 +4,7 @@ $raiz = '../';
 $showNavigation = false;
 require_once($raiz.'infraestrutura/config.php');
 
-$controlUser = $raiz.'control/UserControl.php';
+
 
 include_once $header;
 ?>

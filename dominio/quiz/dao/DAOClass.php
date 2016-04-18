@@ -7,7 +7,7 @@ class DAOClass{
   private $servidor = 'localhost';
   private $dbAtual = 'ufma_compSociedade';
   private $user = 'root';
-  private $password = '123456';
+  private $password = '';
 
   public function __construct(){
     if (self::$pdo == null) {
@@ -15,6 +15,32 @@ class DAOClass{
       self::$pdo = new \PDO($dsn, $this->user, $this->password);
       self::$pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
     }
+  }
+
+  public function insert($sql, array $argumentos = array()) {
+    try {
+      $stmt = $this->preparar($sql, $argumentos);
+      $stmt->execute();
+    } catch(PDOException $e) {
+      return 'Error: ' . $e->getMessage();
+    }
+    return $stmt->rowCount();
+  }
+
+  /**
+   * @param string $sql
+   * @param array $argumentos
+   * @return array
+   */
+  public function select($sql, array $argumentos = array()) {
+    try {
+      $stmt = $this->preparar($sql, $argumentos);
+      $stmt->execute();
+    } catch(PDOException $e) {
+      return 'Error: ' . $e->getMessage();
+    }
+    return $stmt->fetchAll();
+
   }
 
   /**
@@ -30,26 +56,6 @@ class DAOClass{
     return $stmt;
   }
 
-  /**
-   * @param string $sql
-   * @param array $argumentos
-   * @return array
-   */
-  public function select($sql, array $argumentos = array()) {
-    $stmt = $this->preparar($sql, $argumentos);
-    $stmt->execute();
-    return $stmt->fetchAll();
-  }
-  public function insert($sql, array $argumentos = array()) {
-    try {
-      $stmt = $this->preparar($sql, $argumentos);
-      $stmt->execute();
-    } catch(PDOException $e) {
-      return 'Error: ' . $e->getMessage();
-    }
-      return $stmt->rowCount();
-    }
-
     /**
     * @param string $sql
     * @param array $argumentos
@@ -59,5 +65,6 @@ class DAOClass{
       $stmt = $this->preparar($sql, $argumentos);
       return $stmt->execute();
     }
-  }
-  ?>
+
+}
+?>

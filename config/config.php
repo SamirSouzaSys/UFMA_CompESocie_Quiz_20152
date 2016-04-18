@@ -1,7 +1,8 @@
 <?php
-$rootProject = "/ufma/UFMA_CompESocie_Quiz_20152";
+// $rootProject = "/ufma/UFMA_CompESocie_Quiz_20152";
 // $rootProject = "";
-// $rootProject = "/sam/UFMA_Contabilidade_Portal_20152";
+$rootProject = "/sam/UFMA_CompESocie_Quiz_20152/s";
+
 
 $header = $raiz."/template/head.php";
 $footer = $raiz."/template/footer.php";

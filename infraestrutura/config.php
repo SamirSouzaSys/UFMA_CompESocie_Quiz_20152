@@ -1,7 +1,7 @@
 <?php
-$rootProject = "/ufma/UFMA_CompESocie_Quiz_20152/";
+// $rootProject = "/ufma/UFMA_CompESocie_Quiz_20152/";
 // $rootProject = "";
-// $rootProject = "/sam/UFMA_Contabilidade_Portal_20152";
+$rootProject = "/sam/UFMA_CompESocie_Quiz_20152/";
 
 $header    = $raiz."template/head.php";
 $footer    = $raiz."template/footer.php";
@@ -12,6 +12,8 @@ $temasQuestoes  = $raiz."template/printTemasDisponiveis.php";
 
 $assetsLocation = "assets";
 
+$controlUser = $raiz.'control/UserControl.php';
+$controlLogin = $raiz.'control/LoginControl.php';
 
 // $showNavigation = array("mainPage.php");
 
